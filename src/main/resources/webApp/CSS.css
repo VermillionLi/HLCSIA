@@ -1,0 +1,51 @@
+body{
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url("wallpaperDefault.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    /*
+    image src: https://alphacoders.com/users/profile/258891/Invictus
+    image: personal use, copyright free (change if server were to be brought up online:
+        artist: https://wall.alphacoders.com/big.php?i=1292331
+    */
+
+}
+h1{
+font-size: 70px;
+font-family: cursive;
+margin: auto;
+    text-align: center;
+}
+h2{
+    font-size: 40px;
+    font-family: fantasy;
+    margin: auto;
+    text-align: center;
+}
+input{
+    text-align: center;
+    border: 3px solid yellow;
+
+}
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+.navbar{
+    background-color: maroon;
+    padding: 2px;
+}
+.navbar ul{
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+}
+.navbar a{
+    float: left;
+    display: block;
+    text-align: center;
+    color: yellow;
+}
+
