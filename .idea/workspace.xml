@@ -4,35 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/Algorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/StatCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallHonor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallShame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallTeammates.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Battle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/BattleList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Brawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/BattleLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/CSS.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/JavaScript.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/individualStat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/setting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/wallpaperDefault.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Jackson.java" afterDir="false" />
+    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="aa">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,10 +119,25 @@
       <workItem from="1742192615806" duration="104000" />
       <workItem from="1742242316824" duration="3239000" />
       <workItem from="1742351385498" duration="611000" />
+      <workItem from="1742409286716" duration="293000" />
+      <workItem from="1742410500507" duration="630000" />
     </task>
+    <task id="LOCAL-00001" summary="aa">
+      <option name="closed" value="true" />
+      <created>1742409569249</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742409569249</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="aa" />
+    <option name="LAST_COMMIT_MESSAGE" value="aa" />
   </component>
 </project>
