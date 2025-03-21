@@ -1,15 +1,19 @@
 package Algorithms;
 
 import POJO.Battle;
+import POJO.Item;
 
 
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class IndividualStatsCalculator extends StatsAlgorithm {
 
-
-    public IndividualStatsCalculator(Queue<Battle> battles) {
-        super(battles);
+    public IndividualStatsCalculator(Queue<Item> item) {
+        if(item.peek() != null) {
+            first = new Node(item.poll());
+            makeBattle(first, item);
+        }
         gatherData();
         findStreak();
     }
@@ -19,13 +23,13 @@ public class IndividualStatsCalculator extends StatsAlgorithm {
 public void findStreak() {
     if (first != null) {
         Streak streak = startNewStreak(first);
-        DocumentStreak(first.reference, streak);
+        findStreak(first.reference, streak);
     }
 }
 
 @Override
-     public Boolean findIfStreakWon(Node node){
-        if (node.battle.hasWon == true || node.battle.hasDrawn == true) {
+     public boolean findIfStreakWon(Node node){
+        if (node.item.battle.hasWon == true || node.item.battle.hasDrawn == true) {
             return true;
         }
         return false;

@@ -4,28 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="aa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/IndividualStatsCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/StatsAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/Streak.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/hasStreak.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Battle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/BattleList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Brawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Name.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/BattleLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/CSS.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/JavaScript.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/individualStat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/setting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/wallpaperDefault.jpg" afterDir="false" />
+    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="did static info calculation (win#, trophy#)&#10;did the win/lose streak calculation&#10;&#10;TASKLIST FOR LATER&#10;for individual: &#10;wrap things up&#10;UML &#10;for wall:&#10;get IndividualStatsCalculator for every player, iterate and determine the best way to present&#10;do underdog + starplayer&#10;&#10;POJO and JS interactivity">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Backup_Battle/Battle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Algo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/jacksonName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.url" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/IndividualStatsCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/IndividualStatsCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/StatsAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/StatsAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/Battle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/BattleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/BattleList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/Brawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/Brawler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/Name.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/BattleLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/BattleLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/CSS.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/JavaScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/individualStat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/setting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/wallpaperDefault.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Jackson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Jackson.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,27 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Jackson.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pheni/Downloads/BrawlHall/src/main/java&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/pheni/Downloads/BrawlHall/src/main/java/Servlet/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Jackson.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.jacksonName.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/pheni/Downloads/BrawlHall/src/main/java",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/pheni/Downloads/BrawlHall/src/main/java/Servlet/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pheni\Downloads\BrawlHall\src\main\java" />
@@ -88,10 +95,18 @@
       <recent name="C:\Users\pheni\Downloads\BrawlHall\src\main\resources\WebApp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Backup_Battle" />
       <recent name="Servlet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Algo">
+    <configuration name="Algo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algo" />
+      <module name="BrawlHall" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Jackson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Jackson" />
       <module name="BrawlHall" />
@@ -112,10 +127,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="jacksonName" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jacksonName" />
+      <module name="BrawlHall" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Algo" />
         <item itemvalue="Application.Jackson" />
+        <item itemvalue="Application.jacksonName" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +167,7 @@
       <workItem from="1742351385498" duration="611000" />
       <workItem from="1742409286716" duration="293000" />
       <workItem from="1742410500507" duration="630000" />
-      <workItem from="1742451372242" duration="12389000" />
+      <workItem from="1742451372242" duration="35891000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <option name="closed" value="true" />
@@ -161,26 +185,34 @@
       <option name="project" value="LOCAL" />
       <updated>1742451658633</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="did static info calculation (win#, trophy#)&#10;did the win/lose streak calculation&#10;&#10;TASKLIST FOR LATER&#10;for individual: &#10;wrap things up&#10;UML &#10;for wall:&#10;get IndividualStatsCalculator for every player, iterate and determine the best way to present&#10;do underdog + starplayer&#10;&#10;POJO and JS interactivity">
+      <option name="closed" value="true" />
+      <created>1742463967516</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742463967516</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="aa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aa" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/POJO/Battle.java</url>
-          <line>14</line>
-          <properties field="duration" class="POJO.Battle" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="did static info calculation (win#, trophy#)&#10;did the win/lose streak calculation&#10;&#10;TASKLIST FOR LATER&#10;for individual: &#10;wrap things up&#10;UML &#10;for wall:&#10;get IndividualStatsCalculator for every player, iterate and determine the best way to present&#10;do underdog + starplayer&#10;&#10;POJO and JS interactivity" />
+    <option name="LAST_COMMIT_MESSAGE" value="did static info calculation (win#, trophy#)&#10;did the win/lose streak calculation&#10;&#10;TASKLIST FOR LATER&#10;for individual: &#10;wrap things up&#10;UML &#10;for wall:&#10;get IndividualStatsCalculator for every player, iterate and determine the best way to present&#10;do underdog + starplayer&#10;&#10;POJO and JS interactivity" />
   </component>
 </project>

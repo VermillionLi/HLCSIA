@@ -1,23 +1,27 @@
 package POJO;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-import java.util.List;
 import java.util.Queue;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class BattleList {
-    Queue<Battle> items;
+    Queue<Item> items;
 
     public BattleList(){
-
+        //JACKSON NEEDS NO ARGUMENT CONSTRUCTOR
     }
-    //JACKSON NEEDS NO ARGUMENT CONSTRUCTOR
-    public BattleList(Queue<Battle> items){
+    @JsonCreator
+    public BattleList(Queue<Item> items){
         this.items = items;
     }
 
-    public Queue<Battle> getItems() {
+    public Queue<Item> getItems() {
         return items;
     }
+    public void setItems(Queue<Item> items) {
+        this.items = items;
+    }
 }
+
+

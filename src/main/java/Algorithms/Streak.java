@@ -13,6 +13,7 @@ public class Streak{
     Boolean streakType;
     public Streak(){
         //account for the first game(s)
+        Stack modes = new Stack<String>();
         size++;
     }
 }

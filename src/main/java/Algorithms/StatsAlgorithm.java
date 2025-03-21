@@ -1,7 +1,9 @@
 package Algorithms;
 
-import POJO.Battle;
 
+import POJO.Item;
+
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -9,8 +11,12 @@ import java.util.Queue;
  * It is meant for easy and light-weight iterations through the player battle logs
  * It iterates the battle log without deleting data through in-class iteration, which would then put the response into another POJO class with a 'has a' relation
  *
+ * StatsAlgorithm serves as the primary class used to calculate *any one particular* player
+ * slightly different rules for both individual and group wall calculations will be implemented in respected classes
+ *
+ *
  */
-abstract class StatsAlgorithm implements hasStreak{
+abstract class  StatsAlgorithm implements hasStreak{
     //convert list into custom list as it is more maneuverable
     /**
      * Win/LoseStreaks are used as stacks since the algorithm for reading it is made to be backwards
@@ -26,25 +32,20 @@ abstract class StatsAlgorithm implements hasStreak{
 
     Node first;
 
-    public StatsAlgorithm(Queue<Battle> battles) {
-        if(battles.peek() != null) {
-            first = new Node(battles.poll());
-            makeBattle(first, battles);
-        }
 
 
-        //remember to let jackson package ignore null objects in POJO
-    }
-    private void makeBattle(Node node, Queue<Battle> battles) {
+    //no constructors, I decided that this abstract class is METHOD and VARIABLE only
+
+    void makeBattle(Node node, Queue<Item> Item) {
         /**
          * Jackson cannot parse JSON into custom non-generic data structures
          * this method transforms a collection of list interface into a more flexible custom linkedlist
          */
-        if(battles.peek() == null){
+        if(Item.peek() == null){
         }else{
-            node.reference = new Node(battles.poll());
+            node.reference = new Node(Item.poll());
             //WARNING: for future reference: if editing the list, please use node.reference.battle instead, otherwise it would overwrite the reference and destroy data.
-            makeBattle(node.reference, battles);
+            makeBattle(node.reference, Item);
         }
     }
     void gatherData() {
@@ -54,9 +55,9 @@ abstract class StatsAlgorithm implements hasStreak{
         if(node == null){
 
         }else{
-            netTrophy += node.battle.trophyChange;
+            netTrophy += node.item.battle.trophyChange;
             //some events do not give trophies
-            if(node.battle.hasWon)
+            if(node.item.battle.hasWon)
                 netWins++;
             gatherData(node.reference);
         }
@@ -84,10 +85,10 @@ abstract class StatsAlgorithm implements hasStreak{
             streak = new LoseStreak();
         }
         //"first" game will always contribute to Streak
-        streak.modes.add(node.battle.mode);
+        streak.modes.add(node.item.event.mode);
         return streak;
     }
-    void DocumentStreak(Node node, Streak streak){
+    void findStreak(Node node, Streak streak){
         //edge case here:
         if(node == null){
             evaluateStreak(streak);
@@ -95,12 +96,12 @@ abstract class StatsAlgorithm implements hasStreak{
             //if won == won, lose == lose; streak is being maintained?
             if(findIfStreakWon(node) == streak.streakType){
                 streak.size++;
-                streak.modes.add(node.battle.map);
-                DocumentStreak(node, streak);
+                streak.modes.add(node.item.event.map);
+                findStreak(node, streak);
             }else{
                 streak = startNewStreak(node);
                 //new streak
-                DocumentStreak(node, streak);
+                findStreak(node, streak);
 
             }
         }
@@ -121,8 +122,8 @@ abstract class StatsAlgorithm implements hasStreak{
         }
 
     }
-    public Boolean findIfStreakWon(Node node){
-        if (node.battle.hasWon == true) {
+    public boolean findIfStreakWon(Node node){
+        if (node.item.battle.hasWon == true) {
             return true;
         }
         return false;
@@ -147,9 +148,9 @@ abstract class StatsAlgorithm implements hasStreak{
 
 }
 class Node{
-    Battle battle;
+    Item item;
     Node reference;
-    Node(Battle battle){
-        this.battle = battle;
+    Node(Item item){
+        this.item = item;
     }
 }
