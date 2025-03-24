@@ -23,7 +23,6 @@ public class BrawlAPIAccess {
         query += "/players/%23" + id;
         query += "/battlelog";
         //do, not, spell, battlelog wrong
-        System.out.println("test " + query);
         return getResponse();
     }
     public String getStats(String id){
@@ -49,7 +48,6 @@ public class BrawlAPIAccess {
             throw new RuntimeException(e);
         }
     }
-
     public String getResponse() {
         sendAPI();
         return response;

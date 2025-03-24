@@ -1,5 +1,6 @@
 package Servlet;
 
+import POJO.BattleLog;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +12,7 @@ import java.io.*;
 import java.util.Map;
 //must use jartaka, javax support from jetty ended
 //must switch to jartaka
-import POJO.*;
+
 
 //must use jartaka, javax support from jetty ended
 //must switch to jartaka
@@ -35,8 +36,8 @@ public class StatChecker extends HttpServlet {
         BrawlAPIAccess api = new BrawlAPIAccess();
         //do some calculations blah blah#PRYQQLRJV", "battlelog"
         System.out.println(api.getBatteLog("PRYQQLRJV"));
-        BattleList items = om.readValue(api.getBatteLog("PRYQQLRJV"), BattleList.class);
-        int test = items.getItems().size();
+        BattleLog items = om.readValue(api.getBatteLog("PRYQQLRJV"), BattleLog.class);
+        int test = items.getItems().length;
         Map<String, Integer> jsonMap = Map.of("test", test);
         //map is necessary to 'wrap' the primitive/standalone object to give it value
         //out

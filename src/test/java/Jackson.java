@@ -1,4 +1,4 @@
-import POJO.BattleList;
+import POJO.BattleLog;
 import Servlet.BrawlAPIAccess;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +15,7 @@ public class Jackson {
  */
 
         ObjectMapper om = new ObjectMapper();
+        //we don't have to deserialize everything, not failing on some random shit is important
         om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         //please spell battlelog right
         BrawlAPIAccess api = new BrawlAPIAccess();
@@ -24,11 +25,11 @@ public class Jackson {
 
 
 
-       BattleList items = om.readValue(api.getBatteLog("PRYQQLRJV"), BattleList.class);
+       BattleLog items = om.readValue(api.getBatteLog("8OQQ9YRGL"), BattleLog.class);
 
         String json = om.writeValueAsString(items);
         System.out.println(json);
-        int test = items.getItems().size();
+        int test = items.getItems().length;
         Map<String, Integer> jsonMap = Map.of("test", test);
         //map is necessary to 'wrap' the primitive/standalone object to give it value
         //out

@@ -33,7 +33,6 @@ public class Hello {
     @JsonCreator
     public Hello(@JsonProperty("name") String name){
         this.name = name;
-        System.out.println(name);
     }
 
     /**

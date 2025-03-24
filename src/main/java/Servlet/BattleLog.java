@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.*;
 //must use jartaka, javax support from jetty ended
 //must switch to jartaka
-import POJO.*;
+
 
 //must use jartaka, javax support from jetty ended
 //must switch to jartaka
@@ -33,9 +33,8 @@ public class BattleLog extends HttpServlet {
         }
         ObjectMapper om = new ObjectMapper();
         om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        BattleList items = om.readValue(json, BattleList.class);
+        POJO.BattleLog items = om.readValue(json, POJO.BattleLog.class);
 
-        System.out.println(items.getItems().size());
 
 
     }

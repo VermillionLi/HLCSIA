@@ -16,42 +16,40 @@ import java.util.Queue;
  *
  *
  */
-abstract class  StatsAlgorithm implements hasStreak{
+
+abstract class StatsAlgorithm implements hasStreak{
     //convert list into custom list as it is more maneuverable
     /**
      * Win/LoseStreaks are used as stacks since the algorithm for reading it is made to be backwards
      * not that it matters internally, it just makes the visuals more chronically appealing when further implementations were made
      */
-    Queue<WinStreak> winStreaks;
-    Queue<LoseStreak> loseStreaks;
-
+    LinkedList<WinStreak> winStreaks = new LinkedList<>();
+    LinkedList<LoseStreak> loseStreaks = new LinkedList<>();
+    String name = "default name";
     int netTrophy = 0;
     int netWins = 0;
     //count ties as a loss as it does not yield reward.
-    //FOR FUTURE IMPLEMENTATIONS: add some feature if game is tied, especially in gem grab game mode, the glory is real there.
-
+    double winLoseRate;
     Node first;
 
 
 
     //no constructors, I decided that this abstract class is METHOD and VARIABLE only
-
-    void makeBattle(Node node, Queue<Item> Item) {
-        /**
-         * Jackson cannot parse JSON into custom non-generic data structures
-         * this method transforms a collection of list interface into a more flexible custom linkedlist
-         */
-        if(Item.peek() == null){
-        }else{
-            node.reference = new Node(Item.poll());
-            //WARNING: for future reference: if editing the list, please use node.reference.battle instead, otherwise it would overwrite the reference and destroy data.
-            makeBattle(node.reference, Item);
+    /**
+     * it's difficult for Jackson to parse JSON into custom non-generic (POJO) data structures
+     * this method transforms an array into a more flexible custom linkedlist
+     */
+    void makeBattle(Item[] item) {
+        Node reference = first;
+        for (int i = 0; i < item.length; i++) {
+            reference = new Node(item[i]);
+            reference = reference.reference;
         }
     }
-    void gatherData() {
-        gatherData(first);
+    void findData() {
+        findData(first);
     }
-    private void gatherData(Node node){
+    private void findData(Node node){
         if(node == null){
 
         }else{
@@ -59,7 +57,7 @@ abstract class  StatsAlgorithm implements hasStreak{
             //some events do not give trophies
             if(node.item.battle.hasWon)
                 netWins++;
-            gatherData(node.reference);
+            findData(node.reference);
         }
     }
 
@@ -85,7 +83,7 @@ abstract class  StatsAlgorithm implements hasStreak{
             streak = new LoseStreak();
         }
         //"first" game will always contribute to Streak
-        streak.modes.add(node.item.event.mode);
+        streak.addMode(node.item.event.mode);
         return streak;
     }
     void findStreak(Node node, Streak streak){
@@ -96,28 +94,28 @@ abstract class  StatsAlgorithm implements hasStreak{
             //if won == won, lose == lose; streak is being maintained?
             if(findIfStreakWon(node) == streak.streakType){
                 streak.size++;
-                streak.modes.add(node.item.event.map);
-                findStreak(node, streak);
+                streak.addMode(node.item.event.mode);
+                findStreak(node.reference, streak);
             }else{
+                evaluateStreak(streak);
                 streak = startNewStreak(node);
                 //new streak
-                findStreak(node, streak);
+                findStreak(node.reference, streak);
 
             }
         }
-
     }
     void evaluateStreak(Streak streak){
         int minStreak;
-        //win streak
-        if(streak.streakType = true){
-            if(streak.size >= minWinStreak){
-                winStreaks.add((WinStreak) streak);
-            }
-            //lose streak
-        }else{
+        //lose streak
+        if(streak.streakType == false){
             if(streak.size >= minLoseStreak){
                 loseStreaks.add((LoseStreak) streak);
+            }
+            //win streak
+        }else{
+            if(streak.size >= minWinStreak){
+                winStreaks.add((WinStreak) streak);
             }
         }
 
@@ -129,6 +127,8 @@ abstract class  StatsAlgorithm implements hasStreak{
         return false;
     }
 
+
+
     /**
      *Below are node functions for a flexible implementation of LinkedList that allows flexible extensions of my project
      * For example, if later users found it necessary to make a calculation that would benefit from traversing up and down the linkedlist
@@ -138,14 +138,23 @@ abstract class  StatsAlgorithm implements hasStreak{
         return first;
     }
     public Node pop() {
-
         Node x = first;
-
         first = first.reference;
         return x;
     }
 
-
+    public int getSize(){
+        int x = 0;
+        if (first != null) {
+            Node reference = first; //no need to copy
+            x++;
+            while (reference.reference != null) {
+                reference = reference.reference;
+                x++;
+            }
+        }
+        return x;
+    }
 }
 class Node{
     Item item;
