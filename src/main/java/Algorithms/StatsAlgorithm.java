@@ -3,6 +3,7 @@ package Algorithms;
 
 import POJO.Item;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -25,11 +26,11 @@ abstract class StatsAlgorithm implements hasStreak{
      */
     LinkedList<WinStreak> winStreaks = new LinkedList<>();
     LinkedList<LoseStreak> loseStreaks = new LinkedList<>();
-    String name = "default name";
+    String name;
     int netTrophy = 0;
     int netWins = 0;
     //count ties as a loss as it does not yield reward.
-    double winLoseRate;
+    double  winLoseRate = 0.0;
     Node first;
 
 
@@ -39,13 +40,15 @@ abstract class StatsAlgorithm implements hasStreak{
      * it's difficult for Jackson to parse JSON into custom non-generic (POJO) data structures
      * this method transforms an array into a more flexible custom linkedlist
      */
-    void makeBattle(Item[] item) {
+    void makeBattle(ArrayList<Item> item) {
+        first = new Node(item.get(0));
         Node reference = first;
-        for (int i = 0; i < item.length; i++) {
-            reference = new Node(item[i]);
+        for (int i = 1; i < item.size(); i++) {
+            reference.reference = new Node(item.get(i));
             reference = reference.reference;
         }
     }
+
     void findData() {
         findData(first);
     }
@@ -110,6 +113,7 @@ abstract class StatsAlgorithm implements hasStreak{
         //lose streak
         if(streak.streakType == false){
             if(streak.size >= minLoseStreak){
+
                 loseStreaks.add((LoseStreak) streak);
             }
             //win streak

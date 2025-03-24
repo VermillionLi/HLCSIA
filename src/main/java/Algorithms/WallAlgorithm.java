@@ -3,8 +3,10 @@ package Algorithms;
 import POJO.BattleLog;
 import POJO.Item;
 import POJO.Player;
+import POJO.WallInformation;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * For all wall algorithm, we pop the Queues as we go along because
@@ -39,15 +41,23 @@ public WallAlgorithm(BattleLog[] manyItems) {
     this.manyItems = new IndividualStatsCalculator[manyItems.length];
     //Evaluate data and parse them
     for (int i = 0; i < manyItems.length; i++) {
+        this.name = manyItems[i].getName();
         BattleLog x = manyItems[i];
-        makeBattle(x.getItems());
-        setOurGuy(x);
         //'first' is automatically overwritten when makeBattle is called
-        findData();
-        findStreak();
-        this.name = x.getName();
+        makeBattle(x.getItems());
+        findData(); //findData functional
+        findStreak(); //findStreak functional
+        setOurGuy(x); //after some ID magickery and .equal forgetting, FUNCTIONAL !!!!
+        this.winLoseRate = (double) netWins/ (double) getSize();
+
         this.manyItems[i] = new IndividualStatsCalculator(winStreaks, loseStreaks, winLoseRate, name);
-        this.manyItems[i].playerJudgement = findJudgement();
+        this.manyItems[i].playerJudgement = findJudgement(); //FUNCTIONAL (after some lex db config and class adding stuff)
+
+        //LASTLY, REMEMBER TO CLEAR ALL DATA!!!!
+        netWins = 0; netTrophy = 0; winLoseRate = 0;
+        winStreaks = new LinkedList<>(); loseStreaks = new LinkedList<>();
+
+
     }
 }
 
@@ -68,33 +78,44 @@ public WallAlgorithm(BattleLog[] manyItems) {
      * However, there are only up to 5 teams per game as of March 2025 (that being duo showdown) and a max of 12 players per game in total (that being trio showdown)
      */
      void setOurGuy(BattleLog x) {
-         String tag = x.getTag();
-         Item[] items = x.getItems();
-        /**
-         * IN TERMS OF COMPLEXITY: this may look like a O(N^3) complexity, but it's not really, allow me to explain
-         * Each battle consists of several teams, but the total # of players NEVER exceed 12. The 2d array is just how JSON
-         * organizes these up to 12 (12 for trio showdown) players
-         * (sometimes it's 2 (for duel), 4 (arcade mode), 6 (classic teams), or 10 (solo and duo showdown) players depending on the game)
-         */
-        //iterate all battles
-        for (int i = 0; i < items.length; i++) {
-            //get team for the i-th battle
-            ArrayList<ArrayList<Player>> teams =  items[i].battle.getTeams();
-            //iterate the teams
-            for (int j = 0; j < teams.size(); j++) {
-                //iterate the players in the team
-                for (int k = 0; k < teams.get(j).size(); k++) {
-                    Player p = teams.get(j).get(k);
-                    if(p.getTag().equals(tag)) {
-                        items[i].getBattle().setOurPlayer(p);
-                        System.out.println(p.getName());
-                        //since we found our player, we can move on to the next battle, setting j to max
-                        j = teams.size();
-                    }
-                }
-            }
 
-        }
+             String tag = "#" + x.getTag().toUpperCase();
+             ArrayList<Item> items = x.getItems();
+             /**
+              * IN TERMS OF COMPLEXITY: this may look like a O(N^3) complexity, but it's not really, allow me to explain
+              * Each battle consists of several teams, but the total # of players NEVER exceed 12. The 2d array is just how JSON
+              * organizes these up to 12 (12 for trio showdown) players
+              * (sometimes it's 4 (arcade mode), 6 (classic teams), or 10 (solo and duo showdown) players depending on the game)
+              */
+             //iterate all battles EXCEPT FOR DUELS, does not count duels, it's not fair (client feedback)
+             for (int i = 0; i < items.size(); i++) {
+                     //get team for the i-th battle
+                     ArrayList<ArrayList<Player>> teams = items.get(i).battle.getTeams();
+                     //check if it's duels
+                 if(teams != null) {
+                     //iterate the teams
+                     for (int j = 0; j < teams.size(); j++) {
+                         //iterate the players in the team
+                         for (int k = 0; k < teams.get(j).size(); k++) {
+                             Player p = teams.get(j).get(k);
+                            // System.out.println("searching for " + tag + ", expected tag: " + p.getTag());
+                            // System.out.println("searching for " + name + ", expected tag: " + p.getName());
+                             //IMPORTANT: supercell has no clue what the difference between 0 and O is, if you don't want to debug for 4 hours like me
+                             //I recommend trying comparing both name and tag to prevent tragic tears at 3AM
+                             if (p.getTag().equals(tag) || p.getName().equals(name)) {
+                                 items.get(i).getBattle().setOurPlayer(p);
+
+                                 //since we found our player, we can move on to the next battle, setting j to max
+                                 k = teams.get(j).size()-1;
+                                 j = teams.size()-1;
+
+                             }
+                         }
+                     }
+                 }
+
+             }
+
     }
 
 
@@ -106,8 +127,17 @@ public WallAlgorithm(BattleLog[] manyItems) {
 
     }
 
-    private ArrayList<Player> findJudgement(Node first, ArrayList<Player> x) {
+    public ArrayList<Player> findJudgement(Node first, ArrayList<Player> x) {
          //nothing here, children will implement features
+        System.out.println("wtf you're not supposed to see this");
+         return null;
+    }
+
+    /**
+     * getInformation converts wall classes into a POJO file with the respective informations, to ensure not one player dominates the front page
+     * the order of the wall 'bulletins' is ordered by criteria of the walls instead of players.
+     */
+    public WallInformation getInformation(){
          return null;
     }
 

@@ -2,26 +2,27 @@ package POJO;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
+import java.util.ArrayList;
 import java.util.Queue;
 
 public class BattleLog {
-    Item[] items;
+    ArrayList<Item> items;
 
-    String name = "default name";
+    String name;
     //name of user's battlelog
     String tag = "0000000";
     public BattleLog(){
         //JACKSON NEEDS NO ARGUMENT CONSTRUCTOR
     }
     @JsonCreator
-    public BattleLog(Item[] items){
+    public BattleLog(ArrayList<Item> items){
         this.items = items;
     }
 
-    public Item[] getItems() {
+    public ArrayList<Item> getItems() {
         return items;
     }
-    public void setItems(Item[] items) {
+    public void setItems(ArrayList<Item> items) {
         this.items = items;
     }
 

@@ -22,7 +22,7 @@ public class IndividualStatsCalculator extends StatsAlgorithm {
     }
 
     //Constructor for sole purpose of calculating individual stats (no name, runs methods inside constructor
-     public IndividualStatsCalculator(Item[] item) {
+     public IndividualStatsCalculator(ArrayList<Item> item) {
         //Gets the Queue of item (which includes battle and event and such) from BattleLog items
         makeBattle(item);
         findData();

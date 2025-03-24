@@ -21,8 +21,14 @@ public class DatabaseFiles {
         st = con.createStatement();
 
         //rules are different for an embedded database
+
+      dropAllTable();
+      createAPITable();
       createBadBrawlersTable();
+      createIDTable();
+      populateID();
       populateBadBrawlerTable();
+      addToken();
     }
 
     static void populateBadBrawlerTable() throws SQLException {
@@ -64,8 +70,8 @@ public class DatabaseFiles {
         String notReal = "3kKkkk";
 
         Stack<String> items = new Stack<>();
-        items.add(exist);
         items.add(me);
+        items.add(exist);
         items.add(notReal);
 
         ObjectMapper om = new ObjectMapper();

@@ -4,30 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="battles = items due to pojo JSON oversight&#10;items covers: &#10;1) events (new) &#10;2) battles">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/BrawlHall.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallHonor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallShame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/JDBC/SQLite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/IndividualInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/POJO/WallInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DatabaseFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/WallDBTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/packageDBTest.java" afterDir="false" />
+    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="backup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/IndividualStatsCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/IndividualStatsCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/StatsAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/StatsAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/Streak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/Streak.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/BattleList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/BattleLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/Hello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/BattleLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/BattleLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/WallHonor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallHonor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/WallShame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallShame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/hasStreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/hasStreak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JDBC/SQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JDBC/SQLite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/BattleLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/BattleLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/WallInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/WallInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Algo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseFiles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Jackson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Jackson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/WallDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WallDBTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/packageDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/packageDBTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +98,7 @@
       <recent name="Servlet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.packageDBTest">
+  <component name="RunManager" selected="Application.WallDBTest">
     <configuration name="Algo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algo" />
       <module name="BrawlHall" />
@@ -144,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.packageDBTest" />
-        <item itemvalue="Application.DatabaseFiles" />
         <item itemvalue="Application.WallDBTest" />
-        <item itemvalue="Application.Jackson" />
+        <item itemvalue="Application.DatabaseFiles" />
         <item itemvalue="Application.Algo" />
+        <item itemvalue="Application.packageDBTest" />
+        <item itemvalue="Application.Jackson" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +169,7 @@
       <workItem from="1742409286716" duration="293000" />
       <workItem from="1742410500507" duration="630000" />
       <workItem from="1742451372242" duration="39117000" />
-      <workItem from="1742686084372" duration="42373000" />
+      <workItem from="1742686084372" duration="59015000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <option name="closed" value="true" />
@@ -211,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742542543108</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="backup">
+      <option name="closed" value="true" />
+      <created>1742793013539</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742793013539</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +232,8 @@
     <MESSAGE value="aa" />
     <MESSAGE value="did static info calculation (win#, trophy#)&#10;did the win/lose streak calculation&#10;&#10;TASKLIST FOR LATER&#10;for individual: &#10;wrap things up&#10;UML &#10;for wall:&#10;get IndividualStatsCalculator for every player, iterate and determine the best way to present&#10;do underdog + starplayer&#10;&#10;POJO and JS interactivity" />
     <MESSAGE value="battles = items due to pojo JSON oversight&#10;items covers: &#10;1) events (new) &#10;2) battles" />
-    <option name="LAST_COMMIT_MESSAGE" value="battles = items due to pojo JSON oversight&#10;items covers: &#10;1) events (new) &#10;2) battles" />
+    <MESSAGE value="backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -241,11 +242,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="7" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

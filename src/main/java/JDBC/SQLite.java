@@ -20,7 +20,8 @@ public class SQLite {
         if(checkExist("BadBrawlers")){
             rs = st.executeQuery("SELECT  COUNT(*) FROM BadBrawlers");
              x = new String[rs.getInt("COUNT(*)")];
-            rs = st.executeQuery("SELECT * FROM BadBrawlers");
+             //ENSURE LEXICOGONAL SORT
+            rs = st.executeQuery("SELECT * FROM BadBrawlers ORDER BY LOWER(Brawler)");
             for (int i = 0; i < x.length; i++) {
                 rs.next();
                 x[i] = rs.getString("Brawler").toUpperCase();

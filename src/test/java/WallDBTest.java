@@ -1,10 +1,13 @@
+import Algorithms.WallHonor;
 import Algorithms.WallShame;
 import POJO.BattleLog;
+import POJO.WallInformation;
 import Servlet.BrawlAPIAccess;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.net.IDN;
 import java.sql.*;
 
 public class WallDBTest {
@@ -15,11 +18,18 @@ public class WallDBTest {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException, JsonProcessingException {
 
-
+        ObjectMapper om = new ObjectMapper();
         Connection con = DriverManager.getConnection(SQLUrl);
         st = con.createStatement();
         BattleLog[] x = crazyShit();
+        for (int i = 0; i < x.length; i++) {
+            System.out.println(om.writeValueAsString(x[i]));
+        }
         WallShame wallShame = new WallShame(x);
+       /// WallHonor wallHonor = new WallHonor(x);
+        WallInformation info = wallShame.getInformation();
+        System.out.println(om.writeValueAsString(info));
+
 
     }
 

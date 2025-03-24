@@ -37,7 +37,7 @@ public class StatChecker extends HttpServlet {
         //do some calculations blah blah#PRYQQLRJV", "battlelog"
         System.out.println(api.getBatteLog("PRYQQLRJV"));
         BattleLog items = om.readValue(api.getBatteLog("PRYQQLRJV"), BattleLog.class);
-        int test = items.getItems().length;
+        int test = items.getItems().size();
         Map<String, Integer> jsonMap = Map.of("test", test);
         //map is necessary to 'wrap' the primitive/standalone object to give it value
         //out

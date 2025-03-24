@@ -29,7 +29,7 @@ public class Jackson {
 
         String json = om.writeValueAsString(items);
         System.out.println(json);
-        int test = items.getItems().length;
+        int test = items.getItems().size();
         Map<String, Integer> jsonMap = Map.of("test", test);
         //map is necessary to 'wrap' the primitive/standalone object to give it value
         //out
