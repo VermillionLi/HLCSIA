@@ -1,6 +1,5 @@
 package Algorithms;
 
-import POJO.BattleLog;
 import POJO.IndividualInformation;
 import POJO.Item;
 import POJO.Player;
@@ -8,7 +7,6 @@ import POJO.Player;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class IndividualStatsCalculator extends StatsAlgorithm {
     ArrayList<Player> playerJudgement = new ArrayList<>();
@@ -23,6 +21,7 @@ public class IndividualStatsCalculator extends StatsAlgorithm {
 
     //Constructor for sole purpose of calculating individual stats (no name, runs methods inside constructor
      public IndividualStatsCalculator(ArrayList<Item> item) {
+         System.out.println("new individual stats checker");
         //Gets the Queue of item (which includes battle and event and such) from BattleLog items
         makeBattle(item);
         findData();
@@ -36,7 +35,10 @@ public void findStreak() {
     if (first != null) {
         Streak streak = startNewStreak(first);
         findStreak(first.reference, streak);
+    }else{
+        System.out.println("cannot find individual, is their name right? do they exist? have they battled recently?");
     }
+
 }
 
 @Override
@@ -64,6 +66,10 @@ public IndividualInformation getInformation(){
     info.setNetTrophy(netTrophy);
     info.setNetWins(netWins);
     info.setWinLoseRate(winLoseRate);
+    //if broken, will return NaN
+    if(Double.isNaN(info.getWinLoseRate())){
+        info.setPOJOStatus("error");
+    }
     return info;
 }
 }

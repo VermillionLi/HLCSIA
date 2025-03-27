@@ -2,13 +2,13 @@ package POJO;
 
 import Algorithms.Streak;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IndividualInformation {
+
+    String POJOStatus = "ok";
     ArrayList<String> streakCommemoration = new ArrayList<>();
     int netTrophy;
     int netWins;
@@ -47,5 +47,13 @@ public class IndividualInformation {
 
     public void setWinLoseRate(double winLoseRate) {
         this.winLoseRate = winLoseRate;
+    }
+
+    public String getPOJOStatus() {
+        return POJOStatus;
+    }
+
+    public void setPOJOStatus(String POJOStatus) {
+        this.POJOStatus = POJOStatus;
     }
 }

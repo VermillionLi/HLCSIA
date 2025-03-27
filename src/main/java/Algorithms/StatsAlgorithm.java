@@ -41,11 +41,15 @@ abstract class StatsAlgorithm implements hasStreak{
      * this method transforms an array into a more flexible custom linkedlist
      */
     void makeBattle(ArrayList<Item> item) {
-        first = new Node(item.get(0));
-        Node reference = first;
-        for (int i = 1; i < item.size(); i++) {
-            reference.reference = new Node(item.get(i));
-            reference = reference.reference;
+        //item will be null if no JSON is returned due to API error
+        if(item != null) {
+            first = new Node(item.get((0)));
+
+            Node reference = first;
+            for (int i = 1; i < item.size(); i++) {
+                reference.reference = new Node(item.get(i));
+                reference = reference.reference;
+            }
         }
     }
 

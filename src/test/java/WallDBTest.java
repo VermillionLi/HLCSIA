@@ -1,12 +1,16 @@
+import Algorithms.WallAlgorithm;
 import Algorithms.WallHonor;
 import Algorithms.WallShame;
+import JDBC.SQLite;
 import POJO.BattleLog;
 import POJO.WallInformation;
 import Servlet.BrawlAPIAccess;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.PrintWriter;
 import java.net.IDN;
 import java.sql.*;
 
@@ -18,20 +22,47 @@ public class WallDBTest {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException, JsonProcessingException {
 
-        ObjectMapper om = new ObjectMapper();
-        Connection con = DriverManager.getConnection(SQLUrl);
-        st = con.createStatement();
-        BattleLog[] x = crazyShit();
-        for (int i = 0; i < x.length; i++) {
-            System.out.println(om.writeValueAsString(x[i]));
+        String WallType = "HONOR";
+        if (WallType == null || WallType.isEmpty()) {
+            System.out.println("{\"status\":\"Missing WallType\"}");
+            return;
         }
-        WallShame wallShame = new WallShame(x);
-       /// WallHonor wallHonor = new WallHonor(x);
-        WallInformation info = wallShame.getInformation();
-        System.out.println(om.writeValueAsString(info));
+
+        ObjectMapper om = new ObjectMapper();
+        //ensure Jackson doesn't fail on some stupid things
+        om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        BrawlAPIAccess api = new BrawlAPIAccess();
+        //retrieve JSON file from API and deserialize into POJO
+        WallAlgorithm wall;
+
+        try {
+            SQLite sql = new SQLite();
+            if(WallType.equalsIgnoreCase("honor")){
+                wall = new WallHonor(sql.getBattleLogs());
+            }else{
+                wall = new WallShame(sql.getBattleLogs());
+            }
+
+            WallInformation info = wall.getInformation();
+
+            String JSON = om.writeValueAsString(info);
+            //return JSON to frontend
+
+            //send info: status: always 'ok'
+            System.out.println(JSON);
+
+        } catch (SQLException e) {
+            System.out.println("{\"status\":\"SQL ERROR cannot find your friends\"}");
+            throw new RuntimeException(e);
+        }
+
+
+
+
 
 
     }
+
 
     public static BattleLog[] crazyShit() throws SQLException, JsonProcessingException {
         rs = st.executeQuery("SELECT count(*) FROM BrawlerID");

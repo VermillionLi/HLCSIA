@@ -26,7 +26,7 @@ public abstract class Streak{
     public String toString(String report) {
         report += "Chronological game modes played: \n";
         while(!modes.empty()){
-            report+= modes.pop() + ", ";
+            report+= modes.pop() + "; ";
         }
         return report;
 

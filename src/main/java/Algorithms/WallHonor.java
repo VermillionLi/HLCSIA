@@ -25,7 +25,6 @@ public class WallHonor extends WallAlgorithm {
         }else{
             if(reference.item.getBattle().getOurPlayer()!=null && reference.item.getBattle().starPlayer != null) {
                 if (reference.item.getBattle().getOurPlayer().getTag().equals(reference.item.getBattle().starPlayer.getTag())) {
-                    System.out.println("starplery ++");
                     x.add(reference.item.getBattle().getOurPlayer());
                 }
             }
@@ -60,8 +59,8 @@ public class WallHonor extends WallAlgorithm {
         info.setTotalPeople(manyItems.length);
         //first check: winLoseRate
         for (int i = 0; i < manyItems.length ; i++) {
-            if(manyItems[i].winLoseRate > 0.6){
-                info.addItems(manyItems[i].name, "Acquired a decent winLoseRate of " + winLoseRate + ".");
+            if(manyItems[i].winLoseRate >= 0.5){
+                info.addItems(manyItems[i].name, "Acquired a decent winLoseRate of " + manyItems[i].winLoseRate + ".");
             }
         }
         //2nd check: Streaks
@@ -72,8 +71,8 @@ public class WallHonor extends WallAlgorithm {
         }
         for (int i = 0; i < manyItems.length ; i++) {
             int starPlayerAmount = manyItems[i].playerJudgement.size();
-            if(starPlayerAmount >= 1) {
-                info.addItems(manyItems[i].name, "Obtained a lot of time! (" + starPlayerAmount + " in the past 25 battles)" );
+            if(starPlayerAmount >= 5) {
+                info.addItems(manyItems[i].name, "Obtained star player a lot of time! (" + starPlayerAmount + " in the past 25 battles)" );
             }
         }
         return info;

@@ -11,24 +11,39 @@
 <h1>BrawlHall</h1>
 
 <nav>
-  <ul class="navbar">
-    <li><a href="index.html">Wall of Honor & Shame</a></li>
-    <li><a href="individualStat.html">individual stat checker</a></li>
-    <li><a href="">random randoms</a></li>
-    <li><a href="">setting</a></li>
-  </ul>
-  <h2>Judgement</h2>
+<ul class="navbar">
+  <li><a href="index.html">Wall of Honor & Shame</a></li>
+  <li><a href="individualStat.html">ur here now</a></li>
+  <li><a href="IHaveYourLogs.html">Battlelog stalking</a></li>
+  <li><a href="setting.html">setting</a></li>
+</ul>
 </nav>
+<h2>Appreciate your stats</h2>
+<h5>make sure that the APITOKEN is CORRECT</h5>
+
 
 <div class = "center">
-  <input id="playerSearch" placeholder="Input player ID #:" title="Search player"><button id="search" onclick="reterieveData()" >search</button>
-  <h1 id = "test" ></h1>
+  <input id="playerSearch" placeholder="Input player ID # (no #): "><button id="search" onclick="reterieveIndividualStat()" >search</button>
 </div>
 
-<div>
-
+<div class = "center">
+  <h4>net trophy gained (last 25 battle): </h4><h4 id = "trophy"></h4>
+  <h4>net wins (last 25 battle): </h4><h4 id = "wins"></h4>
+  <h4>Win Lose Rate (last 25 battle): </h4><h4 id = "wlr"></h4>
+</div>
 
 
 </div>
+  <table id="statsTable">
+    <thead>
+    <tr>
+      <th class="th1">Streaks</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+</div>
+
 </body>
 </html>

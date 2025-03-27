@@ -23,9 +23,6 @@ public class WallShame extends WallAlgorithm {
     ;
     public WallShame(BattleLog[] manyItems) throws SQLException {
         super(manyItems);
-        for (int i = 0; i < badBrawlers.length; i++) {
-            System.out.println(badBrawlers[i].toString());
-        }
 
     }
 
@@ -43,7 +40,6 @@ public class WallShame extends WallAlgorithm {
             if(reference.item.getBattle().getOurPlayer()!=null) {
                 if(isBadBrawler(reference.item.getBattle().getOurPlayer().getBrawler().getName())) {
                     //playing a bad brawler
-                    System.out.println("check");
                     x.add(reference.item.getBattle().getOurPlayer());
                 }
             }
@@ -66,7 +62,7 @@ public class WallShame extends WallAlgorithm {
             String currentCompare = badBrawlers[mid];
             //System.out.println(brawler + " matching " + currentCompare);
 
-            if(brawler.equals(currentCompare)){
+            if(brawler.equalsIgnoreCase(currentCompare)){
                 //we got 'em boys
                 return true;
             }
@@ -108,7 +104,7 @@ public WallInformation getInformation(){
     info.setTotalPeople(manyItems.length);
     //first check: winLoseRate
     for (int i = 0; i < manyItems.length; i++) {
-        if(manyItems[i].winLoseRate < 0.6){
+        if(manyItems[i].winLoseRate < 0.5){
             info.addItems(manyItems[i].name, "Acquired a recent winLoseRate of " + manyItems[i].winLoseRate);
         }
     }
@@ -123,7 +119,6 @@ public WallInformation getInformation(){
         if(amountBadBrawlerPlayed > 1) {
             String myGrievance = "They've been a particularly bad individual, chronologically playing a mix of: ";
             for (int j = 0; j < amountBadBrawlerPlayed; j++) {
-                System.out.println("check");
                 myGrievance += "\n" +manyItems[i].playerJudgement.get(j).getBrawler().getName();
             }
             info.addItems(manyItems[i].name, myGrievance);

@@ -1,5 +1,5 @@
 body{
-    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url("wallpaperDefault.jpg");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url("wallpaperDefault.jpg");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -24,28 +24,62 @@ h2{
 }
 input{
     text-align: center;
-    border: 3px solid yellow;
+    border: 3px solid #ffff00;
 
 }
 .center {
     margin: auto;
-    width: 50%;
     padding: 10px;
+    width: 80%;
     text-align: center;
 }
 .navbar{
-    background-color: maroon;
+    background-color: #ea7373;
     padding: 2px;
+
 }
 .navbar ul{
-    text-decoration: none;
-    padding: 0px;
-    margin: 0px;
-}
-.navbar a{
-    float: left;
-    display: block;
     text-align: center;
+    font-size: 16px;
+    padding: 5px 20px;
+    text-decoration: none;
+}
+.navbar a {
+    display: block;
     color: yellow;
+    text-align: center;
+    padding: 1px;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("brawl-stars-background-zxopl1hhe91qu750.webp");
+    /*
+    https://wallpapers.com/background/brawl-stars-background-zxopl1hhe91qu750.html
+     */
+}
+th{
+    opacity: 85%;
+    border: 7px red;
+    padding: 8px;
+    text-align: left;
+}
+th:first-child{
+    width: 20%;
+}
+td{
+    text-decoration-color: red;
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+
+
+
+}
+th {
+    background-color: #e7e773;
 }
 

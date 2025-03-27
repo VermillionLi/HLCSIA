@@ -3,7 +3,7 @@ package POJO;
 import java.util.ArrayList;
 
 public class WallInformation {
-
+    String POJOStatus = "ok";
     int totalPeople;
 
     ArrayList<String[]> items;
@@ -29,5 +29,7 @@ public class WallInformation {
         this.totalPeople = totalPeople;
     }
 
-
+    public String getPOJOStatus() {
+        return POJOStatus;
+    }
 }

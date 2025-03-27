@@ -4,20 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="backup">
+    <list default="true" id="32e48c40-a970-4937-80ed-96d7fa70b321" name="Changes" comment="algorithm is ready to be used, now just do the servlet, db, and js table and we're done">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/SQLiteBrawlerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/SQLiteServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/SQLiteTokenServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Servlet/Walls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/webApp/IHaveYourLogs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ServletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6b8447a4-da14-4114-8c4f-47f824d0ac8e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6b8447a4-da14-4114-8c4f-47f824d0ac8e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b744d54a-5f44-49b1-97b2-92b35c549e09.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b744d54a-5f44-49b1-97b2-92b35c549e09/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrawlHall.db" beforeDir="false" afterPath="$PROJECT_DIR$/BrawlHall.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webApp/Settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/IndividualStatsCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/IndividualStatsCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/StatsAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/StatsAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/Streak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/Streak.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/WallHonor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallHonor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/WallShame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/WallShame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/hasStreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/hasStreak.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/JDBC/SQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JDBC/SQLite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/BattleLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/BattleLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/POJO/IndividualInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/IndividualInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/POJO/WallInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/POJO/WallInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Jackson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Jackson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/BattleLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/BattleLogServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/BrawlAPIAccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlet/StatChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlet/IndividualStatsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/CSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webApp/CSS.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/JavaScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webApp/JavaScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webApp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/individualStat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webApp/individualStat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/webApp/setting.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/webApp/setting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Algo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Algo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/WallDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WallDBTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/packageDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/packageDBTest.java" afterDir="false" />
     </list>
@@ -30,9 +51,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -49,38 +70,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Algo.executor": "Run",
-    "Application.DatabaseFiles.executor": "Run",
-    "Application.DatabaseTest.executor": "Run",
-    "Application.Jackson.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.WallDBTest.executor": "Run",
-    "Application.jacksonName.executor": "Run",
-    "Application.packageDBTest.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/pheni/Downloads/BrawlHall/src/main/resources",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/pheni/Downloads/BrawlHall/src/main/java/Servlet/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Algo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DatabaseFiles.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DatabaseTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Jackson.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ServletTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WallDBTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.jacksonName.executor&quot;: &quot;Run&quot;,
+    &quot;Application.packageDBTest.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pheni/Downloads/BrawlHall - FIANL PRODUCT BACKUP&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/pheni/Downloads/BrawlHall/src/main/java/Servlet/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pheni\Downloads\BrawlHall\src\main\resources" />
@@ -98,16 +123,9 @@
       <recent name="Servlet" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WallDBTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Algo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algo" />
-      <module name="BrawlHall" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DatabaseFiles" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DatabaseFiles" />
       <module name="BrawlHall" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,6 +134,19 @@
     <configuration name="Jackson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Jackson" />
       <module name="BrawlHall" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servlet.Main" />
+      <module name="BrawlHall" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Servlet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.WallDBTest" />
-        <item itemvalue="Application.DatabaseFiles" />
         <item itemvalue="Application.Algo" />
-        <item itemvalue="Application.packageDBTest" />
         <item itemvalue="Application.Jackson" />
+        <item itemvalue="Application.packageDBTest" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +200,13 @@
       <workItem from="1742409286716" duration="293000" />
       <workItem from="1742410500507" duration="630000" />
       <workItem from="1742451372242" duration="39117000" />
-      <workItem from="1742686084372" duration="59015000" />
+      <workItem from="1742686084372" duration="68426000" />
+      <workItem from="1742845416026" duration="44205000" />
+      <workItem from="1743024559864" duration="1279000" />
+      <workItem from="1743026371184" duration="6000" />
+      <workItem from="1743026393246" duration="12000" />
+      <workItem from="1743026649635" duration="352000" />
+      <workItem from="1743032531712" duration="2534000" />
     </task>
     <task id="LOCAL-00001" summary="aa">
       <option name="closed" value="true" />
@@ -211,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742793013539</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="algorithm is ready to be used, now just do the servlet, db, and js table and we're done">
+      <option name="closed" value="true" />
+      <created>1742808747416</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742808747416</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,15 +278,21 @@
     <MESSAGE value="did static info calculation (win#, trophy#)&#10;did the win/lose streak calculation&#10;&#10;TASKLIST FOR LATER&#10;for individual: &#10;wrap things up&#10;UML &#10;for wall:&#10;get IndividualStatsCalculator for every player, iterate and determine the best way to present&#10;do underdog + starplayer&#10;&#10;POJO and JS interactivity" />
     <MESSAGE value="battles = items due to pojo JSON oversight&#10;items covers: &#10;1) events (new) &#10;2) battles" />
     <MESSAGE value="backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup" />
+    <MESSAGE value="algorithm is ready to be used, now just do the servlet, db, and js table and we're done" />
+    <option name="LAST_COMMIT_MESSAGE" value="algorithm is ready to be used, now just do the servlet, db, and js table and we're done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="7" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Jackson.java</url>
+          <line>10</line>
+          <properties class="Jackson" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

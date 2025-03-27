@@ -499,7 +499,7 @@
     </routine>
     <schema id="191" parent="1" name="main">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2025-03-24.02:18:28</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-03-26.22:07:32</LastIntrospectionLocalTimestamp>
     </schema>
     <argument id="192" parent="16">
       <ArgumentDirection>R</ArgumentDirection>
@@ -1596,73 +1596,69 @@
     <table id="558" parent="191" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="559" parent="555" name="Name">
+    <column id="559" parent="555" name="Token">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="560" parent="555" name="Token">
-      <DasType>TEXT|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <index id="561" parent="555" name="sqlite_autoindex_APIToken_1">
+    <index id="560" parent="555" name="sqlite_autoindex_APIToken_1">
       <ColNames>Token</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="562" parent="555">
+    <key id="561" parent="555">
       <ColNames>Token</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_APIToken_1</UnderlyingIndexName>
     </key>
-    <column id="563" parent="556" name="Brawler">
+    <column id="562" parent="556" name="Brawler">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <index id="564" parent="556" name="sqlite_autoindex_BadBrawlers_1">
+    <index id="563" parent="556" name="sqlite_autoindex_BadBrawlers_1">
       <ColNames>Brawler</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="565" parent="556">
+    <key id="564" parent="556">
       <ColNames>Brawler</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_BadBrawlers_1</UnderlyingIndexName>
     </key>
-    <column id="566" parent="557" name="nickname">
+    <column id="565" parent="557" name="nickname">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="567" parent="557" name="ID">
+    <column id="566" parent="557" name="ID">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="568" parent="557" name="sqlite_autoindex_BrawlerID_1">
+    <index id="567" parent="557" name="sqlite_autoindex_BrawlerID_1">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="569" parent="557">
+    <key id="568" parent="557">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_BrawlerID_1</UnderlyingIndexName>
     </key>
-    <column id="570" parent="558" name="type">
+    <column id="569" parent="558" name="type">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="571" parent="558" name="name">
+    <column id="570" parent="558" name="name">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="572" parent="558" name="tbl_name">
+    <column id="571" parent="558" name="tbl_name">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="573" parent="558" name="rootpage">
+    <column id="572" parent="558" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="574" parent="558" name="sql">
+    <column id="573" parent="558" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>

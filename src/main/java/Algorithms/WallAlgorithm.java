@@ -22,7 +22,7 @@ import java.util.LinkedList;
  * x) losing/winning as an over/under dog [calculates per battle]
  */
 
-abstract class WallAlgorithm extends StatsAlgorithm{
+public abstract class WallAlgorithm extends StatsAlgorithm{
 
 /**
  * Because wall of shame & wall of honor uses data of many different players
@@ -57,7 +57,7 @@ public WallAlgorithm(BattleLog[] manyItems) {
         netWins = 0; netTrophy = 0; winLoseRate = 0;
         winStreaks = new LinkedList<>(); loseStreaks = new LinkedList<>();
 
-
+        System.out.println("created new wall");
     }
 }
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>BrawlHall</title>
     <link rel="stylesheet" href="CSS.css">
-    <script src="JavaScript.js"></script>
+    <script src="Settings.js"></script>
 </head>
 <body>
 <h1>BrawlHall</h1>
@@ -12,11 +12,32 @@
 <nav>
     <ul class="navbar">
         <li><a href="index.html">Wall of Honor & Shame</a></li>
-        <li><a href="individualStat.html">individual stat checker</a></li>
-        <li><a href="">random randoms</a></li>
-        <li><a href="">setting</a></li>
+        <li><a href="individualStat.html">individual stat checker (automatically adds friend and place in the halls)</a></li>
+        <li><a href="IHaveYourLogs.html">Battle log Stalker >:)</a></li>
+        <li><a href="setting.html">setting</a></li>
     </ul>
 </nav>
 <h2>Setting</h2>
+<div class = "center">
+    <h5>COPY AND PAST YOUR API TOKEN HERE</h5>
+    <input id="token" placeholder="make sure it's right"><button id="use" onclick="addAPI()" >use</button>
+    <h6 id="result"></h6>
+    <p>instruction: go to https://developer.brawlstars.com/#/login and create an account, then use your IP address to create a token. Copy and past the token here</p>
+</div>
+
+<div class= "center">
+    <h4>this button resets friends (all your friends/wall will be gone)!!!!!!!!!</h4>
+    <button id="removePlayers" onclick="removePlayers()" >remove</button>
+    <!-- DO NOT CHANGE THE ID -->
+</div>
+
+<div class= "center">
+    <h4>add bad brawlers here</h4>
+    <input id="addBad" placeholder="make sure it's right"><button id="add" onclick="addBadBrawler()" >use</button>
+    <h5>this button resets what is a bad brawler (only Edgar, Lily, and Kit remains)!!!!!!!!!</h5>
+    <button id="removeBad" onclick="removeBad()" >remove bad brawler list</button>
+    <!-- DO NOT CHANGE THE ID -->
+</div>
+
 </body>
 </html>

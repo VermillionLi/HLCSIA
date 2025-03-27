@@ -1,9 +1,6 @@
 package POJO;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.annotation.*;
 
 import java.util.ArrayList;
 
@@ -23,6 +20,7 @@ public class Battle {
     public int trophyChange;
     public Player starPlayer;
     public Player ourPlayer;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public ArrayList<ArrayList<Player>> teams;
 //account for games with multiple teams
 
@@ -34,9 +32,21 @@ public class Battle {
     @JsonCreator
     public Battle(@JsonProperty("result") String result, @JsonProperty("duration") int duration,
                   @JsonProperty("rank") int rank, @JsonProperty("trophyChange") int trophyChange,
-                  @JsonProperty("starPlayer") Player starPlayer, @JsonProperty("teams") ArrayList<ArrayList<Player>> teams) {
+                  @JsonProperty("starPlayer") Player starPlayer, @JsonProperty("teams") ArrayList<ArrayList<Player>> teams,
+                  @JsonProperty("players") ArrayList<Player> players) {
         this.result = result;
         //might be bugged, in that case remove int rank in parameter
+        //must not be null
+        //teams init up front as we use it to calc other data
+        if(teams != null) {
+            this.teams = teams;
+        }else if(players != null){
+            this.teams = new ArrayList<>();
+            this.teams.add(players);
+        }else{
+            //new feature if more team data comes
+        }
+        //solo showdown has no teams... which is really sad, so we cannot set it null;
         this.rank = rank; //initialize rank away from 0
         if (result != null) {
             if (result.equals("victory")) {
@@ -46,7 +56,7 @@ public class Battle {
                 if (result.equals("draw"))
                     hasDrawn = true;
             }
-        } else if(rank > 0 ) {
+        } else if(rank > 0 && teams != null) {
             if(rank < teams.size()/3){ //scored above 66% of all teams
                 hasWon = true;
             }else{
@@ -66,7 +76,7 @@ public class Battle {
         this.duration = duration;
         this.trophyChange = trophyChange;
         this.starPlayer = starPlayer;
-        this.teams = teams;
+
 
     }
     //our guy
@@ -103,6 +113,7 @@ public class Battle {
         return duration;
     }
     public ArrayList<ArrayList<Player>> getTeams() {
+
         return teams;
     }
 

@@ -13,13 +13,29 @@
 <nav>
     <ul class="navbar">
         <li><a href="index.html">Wall of Honor & Shame</a></li>
-        <li><a href="individualStat.html">individual stat checker</a></li>
-        <li><a href="">random randoms</a></li>
-        <li><a href="">setting</a></li>
+        <li><a href="individualStat.html">individual stat checker (automatically adds friend and place in the halls)</a></li>
+        <li><a href="IHaveYourLogs.html">Battlelog Stalking</a></li>
+        <li><a href="setting.html">setting</a></li>
     </ul>
 </nav>
 <h2>Hall of Honor and Shame</h2>
+<h5>make sure that the APITOKEN is CORRECT</h5>
+<div class="center">
+<button id="honor" onclick="getWall(id)">Wall of Honor</button>    <button id="shame"  onclick="getWall(id)">Wall of Shame</button>
+</div>
 
-
+<div class = "center">
+    <p> people in this wall: </p><p id ="numberOfPlayer"></p>
+    <h2>Player Statistics</h2>
+    <table id="statsTable">
+        <thead>
+        <tr>
+            <th class="th1">Player</th>
+            <th>Reason</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
 </body>
 </html>
